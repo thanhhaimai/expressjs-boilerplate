@@ -1,0 +1,34 @@
+{
+  "name": "Expressjs Boilterplate",
+  "version": "0.0.1",
+  "description": "A boilterplace to speed up expressjs development by provide common utilities.",
+  "keywords": [
+    "boilterplate",
+    "expressjs",
+    "nodejs",
+    "mongoose",
+    "ejs"
+  ],
+  "maintainers": [
+    {
+      "name": "Thanh Hai Mai",
+      "email": "thanhhaipmai@gmail.com"
+    } 
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:thanhhaimai/expressjs_boilerplate.git"
+  },
+  "engines": {
+    "node": "~v0.6.7"
+  },
+  "dependencies":{
+    "express":"",
+    "ejs":"",
+    "mongoose": "",
+    "connect-mongodb": "",
+    "connect": "",
+    "nodemailer": "",
+    "validator": ""
+  } 
+}
