@@ -1,0 +1,26 @@
+<% if(page === 'home') { %> 
+  <div id="splash">
+    <div id="title">CS61AS</div>
+    <div id="loginform">
+      <div id="loginalign">
+        <form method="post" action="/login">
+          <span class="left">username</span><input type="text" class="right" name='user[username]' value='cs61as-'><br>
+          <span class="left">password</span><input type="text" class="right" name='user[password]' type='password'>
+          <div class="clear"></div>
+          <button class="mybutton" id="submitlogin">Go!</button>
+          <button class="mybutton" id="guest">Guest</button>
+        </form>
+        
+      </div>
+    </div>
+    <div id="login">
+      <button id="showlogin"><a name='key' class='iconic key'></a>LOGIN</button>
+      <a href="/#about" id="aboutbutton" class="scroll"><span name="book" class="iconic book-alt"></span>ABOUT</a>
+    </div>
+  </div>
+<% }  else { %>
+  <div id="topbar">
+    <a href="/settings">Settings</a>
+  </div>
+  <%-body%>
+<% } %>
