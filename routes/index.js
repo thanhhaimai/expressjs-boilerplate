@@ -1,4 +1,5 @@
 var fs = require('fs');
+var util = require('util');
 
 module.exports = function(app) {
   /** Load all the routes in ./routes .*/
@@ -12,7 +13,7 @@ module.exports = function(app) {
 
   /** Redirect everything else back to default if logged in. */
   app.get('*', function(req, res) {
-    trace('GET URL: ' + req.url);
+    util.log('GET URL: ' + req.url);
     req.flash('error', "Whoops! The url you just went to does not exist.");
     res.redirect('/default');
   });
