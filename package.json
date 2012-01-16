@@ -1,5 +1,5 @@
 {
-  "name": "Expressjs Boilterplate",
+  "name": "expressjs-boilterplate",
   "version": "0.0.1",
   "description": "A boilterplace to speed up expressjs development by provide common utilities.",
   "keywords": [
