@@ -3,7 +3,6 @@ var express = require('express');
 var app = module.exports = express.createServer();
 var mongoose = require('mongoose');
 var mongoStore = require('connect-mongodb');
-var schema = require('./models');
 var fs = require('fs');
 var nodemailer = require('nodemailer');
 var sanitizer = require('validator').sanitize;
@@ -26,7 +25,7 @@ app.helpers(require('./dh.js').helpers);
 app.dynamicHelpers(require('./dh.js').dynamicHelpers);
 
 /** Database models. */
-schema.defineModels(mongoose, function() {
+require('./models').defineModels(mongoose, function() {
   app.User = User = mongoose.model('User');
   app.LoginToken = LoginToken = mongoose.model('LoginToken');
   db = mongoose.connect(app.set('db-uri'));
@@ -55,5 +54,7 @@ app.use(express.errorHandler({
 /** Where to look for templates. */
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
+
+require('./routes')(app);
 
 app.listen(port);
