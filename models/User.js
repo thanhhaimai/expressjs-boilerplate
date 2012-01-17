@@ -1,10 +1,10 @@
 /** Encryption dependencies. */
 var crypto = require('crypto');
 
-module.exports = function(mongoose) {
+module.exports = function(mongoose, app) {
   var Schema = mongoose.Schema;
   var ObjectId = Schema.ObjectId;
-  
+
   /** A user. */
   User = new Schema({
     username: {
@@ -19,6 +19,7 @@ module.exports = function(mongoose) {
       required: true
     }
   });
+
   /** Password conversion. */
   User.virtual('password').set(function(password) {
     this.salt = randomToken();
@@ -34,4 +35,5 @@ module.exports = function(mongoose) {
   });
 
   mongoose.model('User', User);
+  app.User = mongoose.model('User');
 }

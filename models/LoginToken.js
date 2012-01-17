@@ -1,4 +1,4 @@
-module.exports = function(mongoose) {
+module.exports = function(mongoose, app) {
   var Schema = mongoose.Schema;
   var ObjectId = Schema.ObjectId;
 
@@ -38,4 +38,5 @@ module.exports = function(mongoose) {
   });
 
   mongoose.model('LoginToken', LoginToken);
+  app.LoginToken = mongoose.model('LoginToken');
 }
