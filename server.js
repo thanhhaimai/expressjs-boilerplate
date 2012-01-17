@@ -7,8 +7,8 @@ var mongoStore = require('connect-mongodb');
 var sanitizer = require('validator').sanitize;
 
 /** .*/
-var config = require('./config');
 var app = module.exports = express.createServer();
+var config = app.config = require('./config');
 var db;
 
 /** Database models. */
