@@ -22,9 +22,6 @@ process.addListener('uncaughtException', function(err, stack) {
   console.log('\u0007');
 });
 
-/** Flash message support. */
-app.helpers(require('./dh.js').helpers);
-app.dynamicHelpers(require('./dh.js').dynamicHelpers);
 /** Where to look for templates. */
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
@@ -73,6 +70,9 @@ app.configure('production', function() {
     });
   });
 });
+
+/** Load all the lib. */
+require('./lib')(app);
 
 /** Load all the routes. */
 require('./routes')(app);
