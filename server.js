@@ -45,6 +45,9 @@ app.use(express.static(__dirname + '/public', {
   maxAge: config.COOKIE_LIFETIME
 }));
 
+/** Load all the lib. */
+require('./lib')(app);
+
 app.use(app.router);
 
 /** Show all errors and keep search engines out using robots.txt .*/
@@ -70,9 +73,6 @@ app.configure('production', function() {
     });
   });
 });
-
-/** Load all the lib. */
-require('./lib')(app);
 
 /** Load all the routes. */
 require('./routes')(app);
