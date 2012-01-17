@@ -4,7 +4,7 @@ var util = require('util');
 module.exports = function(app) {
   /** Load all the routes in ./routes .*/
   fs.readdirSync(__dirname).forEach(function(file) {
-    if(file == "index.js") {
+    if (file == "index.js") {
       return;
     }
     var name = file.substr(0, file.indexOf('.'));
