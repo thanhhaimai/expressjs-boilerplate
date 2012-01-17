@@ -28,7 +28,6 @@ module.exports = function(mongoose, app) {
     this.token = randomToken();
     next();
   });
-  // TODO: encrypt cookie
   LoginToken.virtual('cookieValue').get(function() {
     return JSON.stringify({
       username: this.username,

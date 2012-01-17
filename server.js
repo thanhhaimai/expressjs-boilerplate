@@ -19,7 +19,7 @@ require('./models').defineModels(mongoose, app, function() {
 /** .*/
 process.addListener('uncaughtException', function(err, stack) {
   util.log('Caught exception: ' + err + '\n' + err.stack);
-  util.log('\u0007');
+  console.log('\u0007');
 });
 
 /** Flash message support. */
@@ -79,4 +79,4 @@ require('./routes')(app);
 
 /** Start listenning. */
 app.listen(config.port);
-util.log(util.format('ENV: %s, listening on http://localhost:%s', config.env, config.port));
+util.log(util.format('ENV: %s, listening on http://%s:%s', config.env, app.address().address, app.address().port));
