@@ -7,7 +7,6 @@ module.exports = function(app) {
     req.flash('info', "Flash testing. Delete me in routes/default.js");
     res.render('index', {
       page: 'index',
-      currentUser: req.currentUser
     });
   });
 };

@@ -1,5 +1,4 @@
 var fs = require('fs');
-var util = require('util');
 
 module.exports = function(app) {
   /** Load all the routes in ./routes .*/

@@ -1,10 +1,8 @@
 /** Setting up dependencies. */
-var fs = require('fs');
 var util = require('util');
 var express = require('express');
 var mongoose = require('mongoose');
 var mongoStore = require('connect-mongodb');
-var sanitizer = require('validator').sanitize;
 
 /** .*/
 var app = module.exports = express.createServer();
