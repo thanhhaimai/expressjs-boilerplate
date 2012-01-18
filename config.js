@@ -16,6 +16,7 @@ module.exports = {
   /** Port to use. */
   port: DEBUG ? 8086 : process.env.PORT || 80,
   /** Your SMTP information. You can use gmail or your own server. */
+  enableSMTP: true,
   SMTP: {
     host: "smtp.gmail.com",
     port: 587,
